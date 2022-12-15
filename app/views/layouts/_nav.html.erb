@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Sapna Xerox</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item home-li">
+          <%= link_to 'Home', root_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item order-li">
+          <%= link_to 'Order', new_order_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item about-li">
+          <%= link_to 'About', about_path, class:"nav-link" %>
+        </li>
+      </ul>
+
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <%= link_to 'Admin', new_admin_session_path %>
+        </li>
+      </ul>
+
+      <% if admin_signed_in? %>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <%= link_to 'Dashboard', admins_path %>
+          </li>
+        </ul>
+
+        <div class="dropdown btn-acnt">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Account
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><%= link_to current_admin.email, edit_admin_registration_path, class:"dropdown-item" %></li>
+            <li><%= link_to 'Log Out', destroy_admin_session_path, method: :delete, class:"dropdown-item" %></li>
+          </ul>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</nav>
