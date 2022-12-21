@@ -3,6 +3,6 @@ class AdminsController < ApplicationController
     # GET to
     def index
         # Admin access to the order tables
-        @orders = Order.all
+        @orders = Order.all.order(created_at: :desc)
     end
 end
