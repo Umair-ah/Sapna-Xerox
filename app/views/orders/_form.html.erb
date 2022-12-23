@@ -31,31 +31,33 @@
             <div class='row justify-content-sm-center'>
                 <div class='col-md-3'>
                     <%= f.label :first_name%>
-                    <%= f.text_field :first_name, placeholder:"First", class:"form-control" %><br/>
+                    <%= f.text_field :first_name, placeholder:"First", class:"form-control", required: true %><br/>
                 </div>
 
                 <div class='col-md-3'>
                     <%= f.label :last_name %>
-                    <%= f.text_field :last_name, placeholder:"Last", class:"form-control" %><br/>
+                    <%= f.text_field :last_name, placeholder:"Last", class:"form-control", required: true %><br/>
                 </div>
             </div>
 
             <div class='row justify-content-md-center'>
                 <div class='col-md-3'>
                     <%= f.label :phone_number %>
-                    <%= f.text_field :phone_number, placeholder:"Don't include +91", class:"form-control" %><br/>
+                    <%= f.text_field :phone_number, placeholder:"Don't include +91", class:"form-control", required: true %><br/>
                 </div>
             
                 <div class='col-md-3'>
                     <%= f.label :email %>
-                    <%= f.text_field :email, placeholder:"Email", class:"form-control" %><br/>
+                    <%= f.email_field :email, id: 'user_email', type:'email', required: true, placeholder: "Email", class:"form-control" %><br/>
                 </div>
             </div>
 
             <div class='row justify-content-md-center'>
                 <div class='col-md-3'>
-                    <%= f.label :files %>
-                    <%= f.file_field :files, multiple: true %><br/>
+                    <%= f.label :files do %>
+                    <span>Click and Upload your file/files</span>
+                    <% end %>
+                    <%= f.file_field :files, multiple: true, direct_upload: true, required: true %><br/>
                 </div>
             </div>
   
@@ -63,17 +65,17 @@
             <div class='row justify-content-md-center'>
                 <div class='col-md-2'>
                     <%= f.label :color %>
-                    <%= f.select :color, ['Black & White', 'Color', 'Blue-Print', 'Ammonia-Print'], { prompt: 'Select' }, class:'form-select' %><br/>
+                    <%= f.select :color, ['Black & White', 'Color', 'Blue-Print', 'Ammonia-Print'], { prompt: 'Select' }, class:'form-select', required: true %><br/>
                 </div>
             
                 <div class='col-md-2'>
                     <%= f.label :paper_size %>
-                    <%= f.select :paper_size, ['A0','A1','A2','A3','A4','A5', 'Legal', 'A4-PhotoPaper', 'A3-PhotoPaper', '12x18', 'Tracing Sheet'], { prompt: 'Select' }, class:'form-select' %><br/>
+                    <%= f.select :paper_size, ['A0','A1','A2','A3','A4','A5', 'Legal', 'A4-PhotoPaper', 'A3-PhotoPaper', '12x18', 'Tracing Sheet'], { prompt: 'Select' }, class:'form-select', required: true %><br/>
                 </div>
 
                 <div class='col-md-2'>
                     <%= f.label :paper_style %>
-                    <%= f.select :paper_style, ['Back to Back', 'Side to Side'], { prompt: 'Select' }, class:'form-select' %><br/>
+                    <%= f.select :paper_style, ['Back to Back', 'Side to Side'], { prompt: 'Select' }, class:'form-select', required: true %><br/>
                 </div>
             </div>
 
@@ -81,25 +83,25 @@
             <div class='row justify-content-md-center'>
                 <div class='col-md-2'>
                     <%= f.label :quantity %>
-                    <%= f.number_field :quantity, min: 1, class:'form-control' %><br/>
+                    <%= f.number_field :quantity, min: 1, class:'form-control', required: true %><br/>
                 </div>
             </div>
 
             <div class='row justify-content-md-center'>
                 <div class='col-md-6'>
                     <%= f.label :Address %>
-                    <%= f.text_field :location, placeholder:"Aiwan Shahi Area, PDA Engineering College Road..... ", class:'form-control' %><br/>
+                    <%= f.text_field :location, placeholder:"Aiwan Shahi Area, PDA Engineering College Road..... ", class:'form-control', required: true %><br/>
                 </div>
             </div>
 
             <div class='row justify-content-md-center'>
                 <div class='col-md-2'>
-                <%= f.radio_button :delivery, 'PickUp' %> 
+                <%= f.radio_button :delivery, 'PickUp', required: true %> 
                 <%= f.label :delivery, 'PickUp', value: 'PickUp' %> <br/>
                 </div>
 
                 <div class='col-md-2'>
-                <%= f.radio_button :delivery, 'Delivery' %>
+                <%= f.radio_button :delivery, 'Delivery', required: true %>
                 <%= f.label :delivery, 'Delivery', value: 'Delivery' %>
                 </div>
             </div>
