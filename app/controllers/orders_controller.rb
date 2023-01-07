@@ -25,7 +25,6 @@ class OrdersController < ApplicationController
         respond_to do |format|
             format.html { redirect_to admins_path, info: "Deleted #{@order.id}, #{@order.first_name} #{@order.last_name} Successfully!" }
         end
-
     end
 
     def show

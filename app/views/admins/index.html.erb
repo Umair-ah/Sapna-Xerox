@@ -3,8 +3,8 @@
     color: cornflowerblue;
 ">Admin Dashboard</div>
 
-
-<table class="table">
+<div class="table-responsive">
+<table class="table table-hover table-bordered">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -50,7 +50,7 @@
           <td><%= link_to file.filename, rails_blob_path(file, disposition: "attachment") %></td>
         <% end %>
       <% end %>
-      <td><%= button_to "Delete", order_url(f), method: :delete, class:'btn btn-danger' %></td>
+      <td><%= button_to "Delete", order_url(f), method: :delete, class:'btn btn-danger btn-sm' %></td>
 
     <% end %>
     
@@ -60,4 +60,5 @@
   </tbody>
 
 </table>
+</div>
 </div>
