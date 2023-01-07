@@ -1,64 +1,74 @@
 <div class="container-fluid">
-<div class="h1" style="
-    color: cornflowerblue;
-">Admin Dashboard</div>
-
-<div class="table-responsive">
-<table class="table table-hover table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Email</th>
-      <th scope="col">Size</th>
-      <th scope="col" style=" text-align: center; ">Color</th>
-      <th scope="col">Type</th>
-      <th scope="col">Quantity</th>
-      <th scope="col" style="text-align: center;">Location</th>
-      <th scope="col">Order Type</th>
-      <th scope="col">Description</th>
-      <th scope="col">Downloads</th>
-      
-      
-    </tr>
+<div class="card">
+  <div class="card-header">
+    <div class="h1" style="color: cornflowerblue;">Admin Dashboard</div>
+  </div>
   
-    
-  </thead>
-
-  <tbody>
-    <% @orders.each do |f| %>
-    <tr>
-    
-      <th scope="row"><%= f.id %></th>
-      <td><%= f.first_name %></td>
-      <td><%= f.last_name %></td>
-      <td><%= f.phone_number %></td>
-      <td><%= f.email %></td>
-      <td style=" text-align: center; "><%= f.paper_size %></td>
-      <td style=" text-align: center; "><%= f.color %></td>
-      <td><%= f.paper_style %></td>
-      <td style="text-align: center;"><%= f.quantity %></td>
-      <td style="text-align: center;"><%= f.location %></td>
-      <td><%= f.delivery %></td>
-      <td><%= f.description %></td>
+  <div class="card-body">
+    <div class="table-responsive">
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Email</th>
+          <th scope="col">Size</th>
+          <th scope="col" style=" text-align: center; ">Color</th>
+          <th scope="col">Type</th>
+          <th scope="col">Quantity</th>
+          <th scope="col" style="text-align: center;">Location</th>
+          <th scope="col">Order Type</th>
+          <th scope="col">Description</th>
+          <th scope="col">Downloads</th>
+          
+          
+        </tr>
       
+        
+      </thead>
 
-      <% if f.files.attached? %>
-        <% f.files.each do |file| %>
-          <td><%= link_to file.filename, rails_blob_path(file, disposition: "attachment") %></td>
+      <tbody>
+        <% @orders.each do |f| %>
+        <tr>
+        
+          <th scope="row"><%= f.id %></th>
+          <td><%= f.first_name %></td>
+          <td><%= f.last_name %></td>
+          <td><%= f.phone_number %></td>
+          <td><%= f.email %></td>
+          <td style=" text-align: center; "><%= f.paper_size %></td>
+          <td style=" text-align: center; "><%= f.color %></td>
+          <td><%= f.paper_style %></td>
+          <td style="text-align: center;"><%= f.quantity %></td>
+          <td style="text-align: center;"><%= f.location %></td>
+          <td><%= f.delivery %></td>
+          <td><%= f.description %></td>
+          
+
+          <% if f.files.attached? %>
+            <% f.files.each do |file| %>
+              <td><%= link_to file.filename, rails_blob_path(file, disposition: "attachment") %></td>
+            <% end %>
+          <% end %>
+          <td><%= button_to "Delete", order_url(f), method: :delete, class:'btn btn-danger btn-sm' %></td>
+
         <% end %>
-      <% end %>
-      <td><%= button_to "Delete", order_url(f), method: :delete, class:'btn btn-danger btn-sm' %></td>
+        
+        
+        </tr>
 
-    <% end %>
-    
-    
-    </tr>
+      </tbody>
 
-  </tbody>
+    </table>
+    </div>
+  </div>
 
-</table>
+  
 </div>
+
+
+
+
 </div>

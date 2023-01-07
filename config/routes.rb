@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins, :skip => [:registrations]
   devise_scope :admin do
     get '/admins/sign_out' => 'devise/sessions#destroy'
   end
