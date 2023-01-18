@@ -1,12 +1,12 @@
 class OrdersController < ApplicationController
     before_action :set_order, only: %i[show destroy]
 
-    # GET to /orders/new
+    
     def new
         @order = Order.new
     end
 
-    # POST to /orders
+   
     def create
         @order = Order.new(order_params)
 
