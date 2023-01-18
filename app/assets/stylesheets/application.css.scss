@@ -62,3 +62,20 @@
   text-decoration: underline;
   background-color: transparent;
 }
+
+.alert-warning {
+  color: white;
+  background: #212529;
+  border-color: white;
+  text-align: center;
+}
+
+.alert-success{
+  text-align: center;
+  font-size: 22px;
+  box-shadow: 0px 0px 90px 7px #387239;
+}
+
+.alert-info{
+  text-align: center;
+}

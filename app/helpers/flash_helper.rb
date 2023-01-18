@@ -1,10 +1,11 @@
 module FlashHelper
     def flash_fix(name)
         case name
-        when "notice" then "success"
-        when "info" then "info"
-        when "success" then "success"
-        when "" then "warning"
+            when "notice" then "warning"
+            when "info" then "info"
+            when "success" then "success"
+        
+            when name.nil? then "warning"
         end
     end
     
