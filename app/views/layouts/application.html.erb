@@ -23,4 +23,43 @@
 
     <%= yield %>
   </body>
+
+  <footer class="flex-shrink-0 py-4 bg-dark text-white-50">
+
+    <div class="container">
+       <div class="row gy-4 gx-5">
+          <div class="col">
+              <h5 class="h1 text-white">Sapna Xerox</h5>
+              <p class="small" style="font-size:15px; color:white;">Aiwan-E-Shahi Area, PDA Engineering College Road, Gulbarga - 585102</p>
+              <p class="small" style="font-size:13px; color:white;"> Contact Us &#9990; 9483882666</p>
+          </div>
+
+
+          
+          <div class="col" style="display: grid;justify-content: center;">
+            <h3 style="color:white;">Services</h3>
+            <ul style="color:white;">
+              <li>Copying</li>
+              <li>Digital Printing</li>
+              <li>Offset Printing</li>
+              <li>Large Format Printing</li>
+              <li>Flex Printing</li>
+              <li>Gift Solutions</li>
+              <li>Scanning</li>
+              <li>Binding</li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h3 style="color:white;">Quick Links</h3>
+            <ul>
+              <li><%= link_to 'Home', root_path, class:"nav-link", style:" color: white; " %></li>
+              <li><%= link_to 'Order Printouts Now', new_order_path, class:"nav-link", style:" color: white " %></li>
+              <li><%= link_to 'About Us', about_path, class:"nav-link", style:" color: white; " %></li>
+            </ul>
+          
+          </div>
+        </div>
+    </div> 
+  </footer>
 </html>

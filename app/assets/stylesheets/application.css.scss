@@ -16,6 +16,7 @@
  @import "bootstrap";
 
 
+
  // Navbars
 
  .home-li{
@@ -78,4 +79,15 @@
 
 .alert-info{
   text-align: center;
+}
+
+.hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0px;
+  border-top: 1px solid #000000;
+}
+
+.aboutp{
+  text-align: left;
 }

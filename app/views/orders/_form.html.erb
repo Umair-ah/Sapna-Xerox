@@ -31,7 +31,7 @@
             <div class='row justify-content-sm-center'>
                 <div class='col-md-3'>
                     <%= f.label :first_name%>
-                    <%= f.text_field :first_name, placeholder:"First", class:"form-control", required: true %><br/>
+                    <%= f.text_field :first_name, placeholder:"First", class:"form-control", required: true, autofocus: true %><br/>
                 </div>
 
                 <div class='col-md-3'>
@@ -43,7 +43,9 @@
             <div class='row justify-content-md-center'>
                 <div class='col-md-3'>
                     <%= f.label :phone_number %>
-                    <%= f.text_field :phone_number, placeholder:"Don't include +91", class:"form-control", required: true %><br/>
+                    <%= f.text_field :phone_number, placeholder:"Don't include +91", class:"form-control", required: true,
+                    placeholder: 'xxx-xxx-xxxx',
+                    maxlength: 10, minlength: 10 %><br/>
                 </div>
             
                 <div class='col-md-3'>
