@@ -4,6 +4,8 @@ class OrdersController < ApplicationController
     
     def new
         @order = Order.new
+        @q = Order.ransack(params[:q])
+        @orders = @q.result(distinct: true)
     end
 
    
@@ -39,4 +41,5 @@ class OrdersController < ApplicationController
         def order_params
             params.require(:order).permit(:first_name, :last_name, :phone_number, :email, :paper_size, :color, :paper_style, :quantity, :description, :location, :delivery, files: [] )
         end
+        
 end

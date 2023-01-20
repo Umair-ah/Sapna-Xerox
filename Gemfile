@@ -39,6 +39,9 @@ gem 'hirb'
 # Use image_processing for ActiveStorage uploading images/PDfs
 gem 'image_processing'
 
+# Use for search filters
+gem "ransack"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

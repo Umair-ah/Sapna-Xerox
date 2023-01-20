@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   root 'pages#home'
   get '/about', to: 'pages#about'
+ 
 
   resources :orders, only: [:new, :create, :destroy]
   resources :admins, only: [:index]

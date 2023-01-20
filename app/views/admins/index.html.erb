@@ -1,3 +1,5 @@
+<div class="animate">
+
 <div class="container-fluid">
 <div class="card">
   <div class="card-header">
@@ -5,7 +7,23 @@
       <div class="h1" style="color: black;">Sapna Xerox Orders</div>
     </div>
   </div>
-  
+
+  <br/><%= search_form_for(@q, url: admins_path, method: :get) do |f| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+      <%= f.search_field :first_name_or_last_name_or_phone_number_eq, placeholder: "Search Customer", class:"form-control me-2" %>
+      </div>
+
+      <div class="col">
+        <%= f.submit "Search!", class:"btn btn-info" %>
+      </div>
+      
+      
+    </div>
+  </div>
+  <% end %>
+
   <div class="card-body">
     <div class="table-responsive">
     <table class="table table-hover ">
@@ -73,4 +91,5 @@
 
 
 
+</div>
 </div>

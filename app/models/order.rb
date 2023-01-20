@@ -1,6 +1,5 @@
 class Order < ApplicationRecord
 
-    belongs_to :admin, optional: true
     has_many_attached :files
 
     validates :paper_size, presence: true
@@ -22,6 +21,8 @@ class Order < ApplicationRecord
                 errors.add(:files, ",You forgot to upload your Files for printing/xerox")
             end
         end
+
+        
 
         
 
