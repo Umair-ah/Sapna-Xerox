@@ -59,11 +59,13 @@
                     <%= f.label :files do %>
                     <span>Click and Upload your file/files</span>
                     <% end %>
-                    <%= f.file_field :files, multiple: true, direct_upload: true, required: true %>
+                    <div id="file-list">
+                    <%= f.file_field :files, multiple: true, direct_upload: true, required: true, class: "form-control-file" %>
+                    </div>
                     <br/>
+                    
                 </div>
             </div>
-  
 
             <div class='row justify-content-md-center'>
                 <div class='col-md-2'>

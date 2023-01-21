@@ -110,6 +110,14 @@
   animation: transitionIn 2s;
 }
 
+.animate-txt{
+  animation: transitionIntext 1s;
+}
+
+.animate-head{
+  animation: transitionInhead 1s;
+}
+
 @keyframes transitionIn {
   from{
     opacity: 0;
@@ -121,6 +129,44 @@
   to{
     opacity: 1;
     transform: rotateX(0);
+
+  }
+
+
+}
+
+@keyframes transitionIntext {
+  from{
+    opacity: 0;
+    transform: rotateX(-10deg);
+    margin-top: 200px;
+
+  }
+
+
+  to{
+    opacity: 1;
+    transform: rotateX(0);
+    margin-top: 0px;
+
+  }
+
+
+}
+
+@keyframes transitionInhead {
+  from{
+    opacity: 0;
+    transform: rotateX(-10deg);
+    margin-right: 200px;
+
+  }
+
+
+  to{
+    opacity: 1;
+    transform: rotateX(0);
+    margin-right: 0px;
 
   }
 
