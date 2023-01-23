@@ -1,4 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-dark">
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+  </style>
   <div class="container-fluid">
     <a class="navbar-brand" href="#" style=" color: #ffffffc4; ">Sapna Xerox</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style= "background: #f1f1f1eb;">
@@ -7,13 +10,15 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item home-li">
-          <%= link_to 'Home', root_path, class:"nav-link", style:" color: #ffffffc4; " %>
+        <div>
+          <button><%= link_to 'Home', root_path, class:"nav-link", style:" color: #ffffffc4; text-decoration: none; " %></button>
+        </div>
         </li>
         <li class="nav-item order-li">
-          <%= link_to 'Order', new_order_path, class:"nav-link", style:" color: #ffffffc4; " %>
+          <button><%= link_to 'Order', new_order_path, class:"nav-link", style:" color: #ffffffc4; text-decoration: none; " %></button>
         </li>
         <li class="nav-item about-li">
-          <%= link_to 'About', about_path, class:"nav-link", style:" color: #ffffffc4; " %>
+          <button><%= link_to 'About', about_path, class:"nav-link", style:" color: #ffffffc4; text-decoration: none; " %></button>
         </li>
       </ul>
 
