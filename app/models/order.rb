@@ -14,6 +14,8 @@ class Order < ApplicationRecord
     validates :delivery, presence: true
     validate :correct_file_type
 
+    include Roleable
+
     private
 
         def correct_file_type

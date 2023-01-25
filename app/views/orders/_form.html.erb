@@ -99,6 +99,19 @@
             </div>
 
             <div class='row justify-content-md-center'>
+                <div class='col-md-3 '>
+                    <b>Select Your Finishing:</b> <i>*Optional</i><br/><hr class="hr">
+                        <% Order::ROLES.each do |role| %>
+                        <label>
+                            <%= f.check_box role %>
+                            <%= role.to_s.humanize %>
+                        </label>
+                        <br>
+                        <% end %><hr class="hr">
+                </div>
+            </div>
+
+            <div class='row justify-content-md-center'>
                 <div class='col-md-6 '>
                     <%= f.label :Address %>
                     <%= f.text_field :location, placeholder:"Aiwan Shahi Area, PDA Engineering College Road..... ", style:"border-radius: 0px;", class:'form-control', required: true %><br/>

@@ -38,6 +38,7 @@
           <th scope="col" style=" text-align: center; ">Color</th>
           <th scope="col">Type</th>
           <th scope="col">Quantity</th>
+          <th scope="col">Finishing</th>
           <th scope="col" style="text-align: center;">Location</th>
           <th scope="col">Order Type</th>
           <th scope="col">Description</th>
@@ -62,6 +63,7 @@
           <td style=" text-align: center; "><%= f.color %></td>
           <td><%= f.paper_style %></td>
           <td style="text-align: center;"><%= f.quantity %></td>
+          <td style=""><%= f.active_roles.join(", ") %></td>
           <td style="text-align: center;"><%= f.location %></td>
           <td><%= f.delivery %></td>
           <td><%= f.description %></td>

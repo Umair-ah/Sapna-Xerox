@@ -47,7 +47,7 @@
 
 // Account button (When Admin is signed in)
 .btn-acnt{
-  padding-left: 66px;
+  padding-left: 50px;
   margin-left: 1158px;
 }
 
@@ -268,5 +268,11 @@ button:hover::before {
               0 0  0 2px rgb(190, 190, 190),
               0.3em 0.3em 1em rgba(0,0,0,0.3);
  }
+
+ .hr {
+margin-top: 20px;
+margin-bottom: 20px;
+
+}
  
  
