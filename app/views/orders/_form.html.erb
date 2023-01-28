@@ -66,7 +66,7 @@
                     <span>Click and Upload your file/files</span>
                     <% end %>
                     <div id="file-list">
-                    <%= f.file_field :files, multiple: true, direct_upload: true, required: true, class: "form-control-file" %>
+                    <%= f.file_field :files, multiple: true, direct_upload: true, required: true %>
                     </div>
                     <br/>
                     
@@ -124,10 +124,15 @@
             </div>
 
             <div class='row justify-content-md-center'>
-                <div class='col col-md-offset-2'>
-                    <h6><b><i>NOTE: ADVANCE PAYMENT IS NECESSARY FOR DELIVERY, YOU WILL RECIEVE A CALL FOR PAYMENT ONCE THE ORDER IS PLACED</i></b></h6>
+                <div class='col col-md-offset-3'>
+                    </br><ul class="list-group" style=" width: 539px; ">
+                    <li class="list-group-item list-group-item-warning"><h6 style="text-decoration: underline;"><b>NOTE:</b></h6><h6 style="font: -webkit-control;"><b><i> ADVANCE PAYMENT IS NECESSARY IF YOU WANT YOUR ORDER TO BE READY BEFORE YOU ARRIVE.</i></b></h6></li>
+                    </ul>
+
+                        
+                    
                 </div>
-            </div></br>
+            </div>
 
             <div class='row justify-content-md-center'>
                 <div class='col-md-6 input-group'>
