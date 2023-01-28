@@ -1,6 +1,27 @@
 <%= form_with(model: [@order,home], local: true) do |f| %>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
+<div class='card shadow'>
+<div class="card-header">
+<h3 class="text-center">Enter Your Address For Delivery!</h3>
+</div>
 
-    <%= f.submit %>
+<div class="card-body">
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+    <%= f.label :address %>
+    <%= f.text_field :address, class:'form-control', placeholder:"Aiwan-E-Shahi Area, PDA Engineering College Road.......", required: true %><br/>
+
+    <%= f.submit 'Submit', class:'btn btn-primary' %><br/>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+    
 <% end %>
