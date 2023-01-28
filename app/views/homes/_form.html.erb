@@ -1,0 +1,6 @@
+<%= form_with(model: [@order,home], local: true) do |f| %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+
+    <%= f.submit %>
+<% end %>

@@ -39,10 +39,11 @@
           <th scope="col">Type</th>
           <th scope="col">Quantity</th>
           <th scope="col">Finishing</th>
-          <th scope="col" style="text-align: center;">Location</th>
           <th scope="col">Order Type</th>
           <th scope="col">Description</th>
           <th scope="col">Downloads</th>
+          <th>Actions</th>
+          <th>Address</th>
           
           
         </tr>
@@ -64,9 +65,10 @@
           <td><%= f.paper_style %></td>
           <td style="text-align: center;"><%= f.quantity %></td>
           <td style=""><%= f.active_roles.join(", ") %></td>
-          <td style="text-align: center;"><%= f.location %></td>
+         
           <td><%= f.delivery %></td>
           <td><%= f.description %></td>
+        
           
 
           <% if f.files.attached? %>
@@ -76,7 +78,15 @@
           <% end %>
           <td><%= button_to "Delete", order_url(f), method: :delete, class:'btn btn-danger btn-sm' %></td>
 
+          <!-- order.homes.each -->
+          <% f.homes.each do |home|%>
+            <td><%= home.address %></td>
+          <% end %>
+          
+
         <% end %>
+
+        
         
         
         </tr>

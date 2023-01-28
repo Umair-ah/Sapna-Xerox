@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
  
 
-  resources :orders, only: [:new, :create, :destroy]
+  resources :orders, only: [:new, :create, :destroy] do
+    resources :homes, only: [:new, :create, :destroy]
+
+  end
   resources :admins, only: [:index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

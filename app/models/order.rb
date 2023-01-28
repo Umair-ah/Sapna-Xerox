@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
 
     has_many_attached :files
+    has_many :homes
 
     validates :paper_size, presence: true
     validates :color, presence: true
@@ -10,7 +11,6 @@ class Order < ApplicationRecord
     validates :last_name, presence: true
     validates :phone_number, presence: true, numericality: true, length: { minimum: 10, maximum: 10, too_long: "do not include +91/91" }, format: { with: /\A\d+\z/, alert: "Integer only. No sign allowed." }
     validates :email, presence: true
-    validates :location, presence: true
     validates :delivery, presence: true
     validate :correct_file_type
 

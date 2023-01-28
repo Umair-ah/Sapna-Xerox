@@ -11,15 +11,10 @@ class OrdersController < ApplicationController
    
     def create
         @order = Order.new(order_params)
-        
-
-        respond_to do |format|
-            if @order.save
-                format.html{ redirect_to root_url, success: "Order Succesfully Submitted! You will recieve a call shortly!" }
-
-            else
-                format.html{ render :new, status: :unprocessable_entity }
-            end
+        if @order.save && @order.delivery == "Delivery"
+            redirect_to new_order_home_path(@order), info: "Enter Your Address For Delivery!"
+        elsif @order.save && @order.delivery == "PickUp"
+            redirect_to root_path, success: "Your Order Has Been Placed Successfully, You Will Recieve A Call Shortly"
         end
     end
 
@@ -40,7 +35,7 @@ class OrdersController < ApplicationController
         end
 
         def order_params
-            params.require(:order).permit(:first_name, :last_name, :phone_number, :email, :paper_size, :color, :paper_style, :quantity, :description, :location, :delivery, *Order::ROLES, files: [] )
+            params.require(:order).permit(:first_name, :last_name, :phone_number, :email, :paper_size, :color, :paper_style, :quantity, :description, :delivery, *Order::ROLES, files: [] )
         end
         
 end

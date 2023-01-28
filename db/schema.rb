@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_25_072522) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_28_074325) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +54,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_072522) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "homes", force: :cascade do |t|
+    t.string "address"
+    t.bigint "order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_homes_on_order_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string "paper_size"
     t.string "color"
@@ -65,7 +73,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_072522) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.string "location"
     t.string "delivery"
     t.bigint "phone_number"
     t.jsonb "roles", default: {}, null: false
@@ -74,4 +81,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_072522) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "homes", "orders"
 end
