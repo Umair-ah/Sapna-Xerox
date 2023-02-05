@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
                 format.html { redirect_to admins_path, info: "Deleted #{@order.id}, #{@order.first_name} #{@order.last_name} Successfully!" }
             end
         else
-            redirect_to root_path, info: "Order Has Been Cancelled!"
+            redirect_to root_path, danger: "Order Has Been Cancelled!"
         end
 
 

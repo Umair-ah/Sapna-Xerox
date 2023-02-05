@@ -11,6 +11,8 @@
     <%= f.text_field :address, class:'form-control', placeholder:"Aiwan-E-Shahi Area, PDA Engineering College Road.......", required: true %><br/>
 
     <%= f.submit 'Submit', class:'btn btn-primary' %><br/>
+<% end %>
+    <%= button_to "Cancel Order?",order_path(@order), method: :delete, class:'btn btn-danger' %><br/>
     
     <br/><ul class="list-group">
         <li class="list-group-item list-group-item-danger"><b>NOTE: ADVANCE PAYMENT IS NECESSARY FOR DELIVERY, <i>YOU WILL RECIEVE A CALL</i> FEW MINUTES AFTER THE ORDER IS PLACED</b></li>
@@ -25,8 +27,5 @@
 
 
 
-
-
     
-<% end %>
-<%= button_to "Cancel Order?",order_path(@order), method: :delete, class:'btn btn-danger' %><br/>
+
