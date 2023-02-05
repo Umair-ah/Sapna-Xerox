@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
 
     has_many_attached :files
-    has_many :homes
+    has_many :homes, dependent: :destroy
 
     validates :paper_size, presence: true
     validates :color, presence: true

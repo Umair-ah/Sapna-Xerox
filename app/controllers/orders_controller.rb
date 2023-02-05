@@ -20,9 +20,19 @@ class OrdersController < ApplicationController
 
     def destroy
         @order.destroy
-        respond_to do |format|
-            format.html { redirect_to admins_path, info: "Deleted #{@order.id}, #{@order.first_name} #{@order.last_name} Successfully!" }
+        if current_admin
+            respond_to do |format|
+                format.html { redirect_to admins_path, info: "Deleted #{@order.id}, #{@order.first_name} #{@order.last_name} Successfully!" }
+            end
+        else
+            redirect_to root_path, info: "Order Has Been Cancelled!"
         end
+
+
+
+        #respond_to do |format|
+        #    format.html { redirect_to admins_path, info: "Deleted #{@order.id}, #{@order.first_name} #{@order.last_name} Successfully!" }
+        #end
     end
 
     def show
