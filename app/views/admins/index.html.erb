@@ -41,9 +41,9 @@
           <th scope="col">Finishing</th>
           <th scope="col">Order Type</th>
           <th scope="col">Description</th>
+
           <th scope="col">Downloads</th>
-          <th>Actions</th>
-          <th>Address</th>
+          
           
           
         </tr>
@@ -78,12 +78,13 @@
               <td><%= link_to file.filename, rails_blob_path(file, disposition: "attachment") %></td>
             <% end %>
           <% end %>
-          <td><%= button_to "Delete", order_url(f), method: :delete, class:'btn btn-danger btn-sm' %></td>
+          
 
           <!-- order.homes.each -->
           <% f.homes.each do |home|%>
-            <td><%= home.address %></td>
+            <td> <b>ADDRESS:</b><br/><%= home.address %></td>
           <% end %>
+          <td><%= button_to "Delete", order_url(f), method: :delete, class:'btn btn-danger btn-sm' %></td>
           
     
         <% end %>
