@@ -9,6 +9,9 @@ Rails.application.routes.draw do
  
 
   resources :orders, only: [:new, :create, :destroy] do
+    collection do
+      post :delete_all
+    end
     resources :homes, only: [:new, :create, :destroy]
 
   end

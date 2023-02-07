@@ -35,6 +35,12 @@ class OrdersController < ApplicationController
         #end
     end
 
+    def delete_all
+        Home.delete_all
+        Order.delete_all
+        redirect_to admins_path, warning: "All Orders Deleted!"
+    end
+
     def show
     end
 

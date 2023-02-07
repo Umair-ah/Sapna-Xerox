@@ -7,7 +7,7 @@
       <div class="h1" style="color: black;">Sapna Xerox Orders</div>
     </div>
   </div>
-
+ <%= button_to 'DELETE ALL ORDERS', delete_all_orders_path, method: :post, class: "btn btn-warning btn-sm" %>
   <br/><%= search_form_for(@q, url: admins_path, method: :get) do |f| %>
   <div class="container">
     <div class="row">
