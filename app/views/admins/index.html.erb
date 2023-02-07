@@ -53,7 +53,7 @@
 
       <tbody>
         <% @orders.each do |f| %>
-          <% if f.delivery == "Delivery" && f.homes.present? || f.delivery == "PickUp" %>
+      
             
         <tr>
         
@@ -85,7 +85,7 @@
             <td><%= home.address %></td>
           <% end %>
           
-          <% end %>
+    
         <% end %>
 
         
