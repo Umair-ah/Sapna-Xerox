@@ -39,6 +39,8 @@ gem 'hirb'
 # Use image_processing for ActiveStorage uploading images/PDfs
 gem 'image_processing'
 
+gem 'active_storage-send_zip'
+
 # Use for search filters
 gem "ransack"
 

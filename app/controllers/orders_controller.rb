@@ -1,6 +1,13 @@
 class OrdersController < ApplicationController
     before_action :set_order, only: %i[show destroy]
+    include ActiveStorage::SendZip
 
+
+
+    def download_files
+        @order = Order.find(params[:id])
+        send_zip @order.files, filename: "#{@order.first_name + @order.last_name}.zip"
+    end
     
     def new
         @order = Order.new

@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     collection do
       post :delete_all
     end
+
+    member do
+      get :download_files
+    end
     resources :homes, only: [:new, :create, :destroy]
 
   end

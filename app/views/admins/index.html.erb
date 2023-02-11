@@ -7,7 +7,7 @@
       <div class="h1" style="color: black;">Sapna Xerox Orders</div>
     </div>
   </div>
- <%= button_to 'DELETE ALL ORDERS', delete_all_orders_path, method: :post, class: "btn btn-warning btn-sm" %>
+ 
   <br/><%= search_form_for(@q, url: admins_path, method: :get) do |f| %>
   <div class="container">
     <div class="row">
@@ -41,8 +41,9 @@
           <th scope="col">Finishing</th>
           <th scope="col">Order Type</th>
           <th scope="col">Description</th>
-
-          <th scope="col">Downloads</th>
+          <th scope="col" style=" text-align: center; ">Downloads</th>
+          <th scope="col" style=" text-align: center; ">Actions</th>
+          <th scope="col">Address</th>
           
           
           
@@ -73,18 +74,24 @@
         
           
 
-          <% if f.files.attached? %>
-            <% f.files.each do |file| %>
-              <td><%= link_to file.filename, rails_blob_path(file, disposition: "attachment") %></td>
-            <% end %>
-          <% end %>
+          
+        
+          <td><%= button_to "Downloads", download_files_order_path(f), method: :get, class:'btn btn-success btn-sm' %></td>
+            
           
 
-          <!-- order.homes.each -->
-          <% f.homes.each do |home|%>
-            <td> <b>ADDRESS:</b><br/><%= home.address %></td>
-          <% end %>
+          
           <td><%= button_to "Delete", order_url(f), method: :delete, class:'btn btn-danger btn-sm' %></td>
+          <!-- order.homes.each -->
+          <% if f.homes.present?%>
+            <% f.homes.each do |home|%>
+              <td><%= home.address %></td>
+            <% end %>
+
+          <% else %>
+            <td style="text-align: center;"><b>-</b></td>
+          <% end %>
+          
           
     
         <% end %>
@@ -95,9 +102,12 @@
         </tr>
 
       </tbody>
+      
 
     </table>
+    
     </div>
+    <%= button_to 'DELETE ALL ORDERS', delete_all_orders_path, method: :post, class: "btn btn-outline-danger btn-sm" %>
   </div>
 
   
