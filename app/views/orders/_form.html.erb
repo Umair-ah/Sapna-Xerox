@@ -49,7 +49,7 @@
             <div class='row justify-content-md-center'>
                 <div class='col-md-3'>
                     <%= f.label :phone_number %>
-                    <%= f.text_field :phone_number, placeholder:"Don't include +91", class:"form-control", style:"border-radius: 0px;", required: true,
+                    <%= f.telephone_field :phone_number, placeholder:"Don't include +91", class:"form-control", style:"border-radius: 0px;", required: true,
                     placeholder: 'xxx-xxx-xxxx',
                     maxlength: 10, minlength: 10 %><br/>
                 </div>
@@ -125,21 +125,20 @@
 
             <div class='row justify-content-md-center'>
                 <div class='col col-md-offset-3'>
-                    </br><ul class="list-group" style=" width: 539px; ">
+                  
+                    </br><ul class="list-group">
                     <li class="list-group-item list-group-item-warning" style="padding-bottom: 0px;"><h6 style="text-decoration: underline;"><b>NOTE:</b></h6><h6 style="font: -webkit-control;"><b><i> 20₹ DELIVERY CHARGES.</i></b></h6></li>
                     <li class="list-group-item list-group-item-warning" style="padding-top: 0px;"><h6 style="text-decoration: underline;"></h6><h6 style="font: -webkit-control;"><b><i> ADVANCE PAYMENT IS NECESSARY IF YOU WANT YOUR ORDER TO BE READY BEFORE YOU ARRIVE.</i></b></h6></li>
                     <li class="list-group-item list-group-item-warning" style="padding-top: 0px;"><h6 style="text-decoration: underline;"></h6><h6 style="font: -webkit-control;"><b><i> ONLY AVAILABLE IN KALABURAGI / GULBARGA.</i></b></h6></li>
                     </ul>
-
-                        
-                    
+               
                 </div>
             </div>
 
             <div class='row justify-content-md-center'>
-                <div class='col-md-6 input-group'>
-                <%= f.label :description %> 
-                <%= f.text_area :description, placeholder:"(Optional)", class:"form-control", style:"border-radius: 0px;" %><br/>
+                <div class='col-md-6'>
+                <%= f.label :Anything_to_say? %> 
+                <%= f.text_area :description, placeholder:"(Optional)", class:"form-control", style:"border-radius: 0px;"%><br/>
                 </div>
             </div>
             
