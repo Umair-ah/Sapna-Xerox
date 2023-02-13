@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
 
     def download_files
         @order = Order.find(params[:id])
-        send_zip @order.files, filename: "#{@order.first_name + @order.last_name}.zip"
+        send_zip @order.files, filename: "#{@order.first_name + @order.last_name + @order.id.to_s}.zip"
     end
     
     def new
