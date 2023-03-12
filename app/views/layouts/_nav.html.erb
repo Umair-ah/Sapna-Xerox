@@ -31,19 +31,19 @@
 
       <% if admin_signed_in? %>
         <ul class="nav justify-content-end">
-          <li class="nav-item">
+          <li class="nav-item nav-link <%= active?(admins_path)%>"">
             <%= link_to 'Sapna Universal', admins_path, style:" color: #ffffffc4; "%><br/>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item nav-link <%= active?(second_admins_path)%>"">
             <%= link_to 'Sapna PDA', second_admins_path, style:" color: #ffffffc4; "%><br/>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item nav-link <%= active?(third_admins_path)%>"">
             <%= link_to 'Sapna Timmapuri', third_admins_path, style:" color: #ffffffc4; "%><br/>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item nav-link <%= active?(fourth_admins_path)%>">
             <%= link_to 'Sapna Delivery', fourth_admins_path, style:" color: #ffffffc4; "%><br/>
           </li>
         </ul>
