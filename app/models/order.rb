@@ -2,6 +2,7 @@ class Order < ApplicationRecord
 
     has_many_attached :files
     has_many :homes, dependent: :destroy
+    has_many :picks, dependent: :destroy
 
     validates :paper_size, presence: true
     validates :color, presence: true
@@ -13,6 +14,8 @@ class Order < ApplicationRecord
     validates :email, presence: true
     validates :delivery, presence: true
     validate :correct_file_type
+
+    
 
     include Roleable
 

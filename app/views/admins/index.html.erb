@@ -4,7 +4,7 @@
 <div class="card">
   <div class="card-header">
     <div style="display: flex; justify-content: center; align-items: center;">
-      <div class="h1" style="color: black;">Sapna Xerox Orders</div>
+      <div class="h1" style="color: black;">Sapna Xerox Universal Orders</div>
     </div>
   </div>
  
@@ -12,7 +12,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-      <%= f.search_field :first_name_or_last_name_or_phone_number_eq, placeholder: "Search Customer", class:"form-control me-2" %>
+      <%= f.search_field :first_name_or_last_name_or_phone_number_eq, placeholder: "Search Customer Universally", class:"form-control me-2" %>
       </div>
 
       <div class="col">
@@ -44,6 +44,7 @@
           <th scope="col" style=" text-align: center; ">Downloads</th>
           <th scope="col" style=" text-align: center; ">Actions</th>
           <th scope="col">Address</th>
+          <th scope="col">Shop</th>
           
           
           
@@ -86,6 +87,15 @@
           <% if f.homes.present?%>
             <% f.homes.each do |home|%>
               <td><%= home.address %></td>
+            <% end %>
+
+          <% else %>
+            <td style="text-align: center;"><b>-</b></td>
+          <% end %>
+
+          <% if f.picks.present?%>
+            <% f.picks.each do |pick|%>
+              <td><%= pick.shop %></td>
             <% end %>
 
           <% else %>

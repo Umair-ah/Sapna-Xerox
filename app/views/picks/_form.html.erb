@@ -1,0 +1,31 @@
+<%= form_with(model: [@order,pick], local: true) do |f| %>
+<div class='card shadow'>
+<div class="card-header">
+<h3 class="text-center">Select Your Shop For PickUp!</h3>
+</div>
+
+<div class="card-body" style=" padding-bottom: 230px; ">
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+    <%= f.label :pick_up_at_shop %>
+    <%= f.select :shop, ['Sapna Xerox Near PDA College', 'Sapna Xerox Near Timmapuri'], { prompt: 'Select' }, style:"border-radius: 0px; padding: 12px; font-size: inherit;", class:'form-select form-select-lg mb-3', required: true %><br/>
+
+    <%= f.submit 'Submit', class:'btn btn-primary' %><br/>
+<% end %>
+    <%= button_to "Cancel Order?",order_path(@order), method: :delete, class:'btn btn-danger' %><br/>
+    
+    <br/><ul class="list-group">
+        <li class="list-group-item list-group-item-danger"><b>Advance Payment is necessary if you want your order to be ready before you arrive at the shop! <i>YOU WILL RECIEVE A CALL FOR PAYMENT</i> FEW MINUTES AFTER THE ORDER IS PLACED</b></li>
+    </ul><br/>
+    </div>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+    
+

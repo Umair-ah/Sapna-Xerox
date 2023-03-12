@@ -11,8 +11,6 @@ class OrdersController < ApplicationController
     
     def new
         @order = Order.new
-        @q = Order.ransack(params[:q])
-        @orders = @q.result(distinct: true)
     end
 
    
@@ -21,7 +19,7 @@ class OrdersController < ApplicationController
         if @order.save && @order.delivery == "Delivery"
             redirect_to new_order_home_path(@order), info: "Enter Your Address For Delivery!"
         elsif @order.save && @order.delivery == "PickUp"
-            redirect_to root_path, success: "Your Order Has Been Placed Successfully, You Will Recieve A Call Shortly"
+            redirect_to new_order_pick_path(@order), info: "Select Your Shop For PickUp!"
         end
     end
 
