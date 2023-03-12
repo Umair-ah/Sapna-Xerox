@@ -41,6 +41,8 @@ gem 'image_processing'
 
 gem 'active_storage-send_zip'
 
+gem 'kaminari'
+
 # Use for search filters
 gem "ransack"
 

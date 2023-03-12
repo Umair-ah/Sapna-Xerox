@@ -115,6 +115,11 @@
       
 
     </table>
+  
+    <div class="paginator">
+      <%= paginate @orders %>
+    </div>
+
     
     </div>
     <%= button_to 'DELETE ALL ORDERS', delete_all_orders_path, method: :post, class: "btn btn-outline-danger btn-sm" %>
