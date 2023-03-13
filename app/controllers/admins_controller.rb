@@ -4,9 +4,8 @@ class AdminsController < ApplicationController
 
     def index
         # Admin access to the order tables
-        @orders = Order.all.page(params[:page]).per(5)
         @q = Order.ransack(params[:q])
-        @orders = @q.result.order(created_at: :desc)
+        @orders = @q.result.order(created_at: :desc).page(params[:page]).per(5)
     end
 
     
