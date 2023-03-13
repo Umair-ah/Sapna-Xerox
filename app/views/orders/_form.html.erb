@@ -36,13 +36,13 @@
                 <div class='col-md-3'>
                 
                     <%= f.label :first_name%>
-                    <%= f.text_field :first_name, placeholder:"First", class:"form-control", style:"border-radius: 0px;", required: true, autofocus: true %><br/>
+                    <%= f.text_field :first_name, placeholder:"First", class:"form-control", style:"border-radius: 0px;", required: true, autofocus: true, maxlength: 45%><br/>
          
                 </div>
 
                 <div class='col-md-3'>
                     <%= f.label :last_name %>
-                    <%= f.text_field :last_name, placeholder:"Last", class:"form-control", style:"border-radius: 0px;", required: true %><br/>
+                    <%= f.text_field :last_name, placeholder:"Last", class:"form-control", style:"border-radius: 0px;", required: true, maxlength: 45 %><br/>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@
             
                 <div class='col-md-3'>
                     <%= f.label :email %>
-                    <%= f.email_field :email, id: 'user_email', type:'email', required: true, placeholder: "Email", style:"border-radius: 0px;", class:"form-control" %><br/>
+                    <%= f.email_field :email, id: 'user_email', type:'email', required: true, placeholder: "Email", style:"border-radius: 0px;", class:"form-control", maxlength: 65 %><br/>
                 </div>
             </div>
 
@@ -138,7 +138,7 @@
             <div class='row justify-content-md-center'>
                 <div class='col-md-6'>
                 <%= f.label :Anything_to_say? %> 
-                <%= f.text_area :description, placeholder:"(Optional)", class:"form-control", style:"border-radius: 0px;"%><br/>
+                <%= f.text_area :description, placeholder:"(Optional)", class:"form-control", style:"border-radius: 0px;", maxlength: 100 %><br/>
                 </div>
             </div>
             
